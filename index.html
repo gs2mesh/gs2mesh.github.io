@@ -27,62 +27,22 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="./static/css/dics.min.css">
-  <script src="./static/js/dics.min.js"></script>
+  <link rel="stylesheet" href="./static/css/dics.css">
+  <script src="./static/js/dics.js"></script>
   <script>
-      document.addEventListener('DOMContentLoaded', domReady);
-      function domReady() {
-          for (const e of document.querySelectorAll(".b-dics")) {
-              new Dics({
-                  container: e,
-                  textPosition: "top"
-              });
-          }
-      }
+    document.addEventListener('DOMContentLoaded', domReady);
+    function domReady() {
+        for (const e of document.querySelectorAll(".b-dics")) {
+            new Dics({
+                container: e,
+                textPosition: "bottom"
+            });
+        }
+    }
   </script>
+
 </head>
 <body>
-
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <!-- <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a> -->
-
-      <!-- <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div> -->
-    </div>
-
-  </div>
-</nav>
-
 
 <section class="hero">
   <div class="hero-body">
@@ -128,16 +88,6 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href="https://gs2mesh.github.io"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video (coming soon)</span>
-                </a>
-              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://gs2mesh.github.io"
@@ -148,15 +98,6 @@
                   <span>Code (coming soon)</span>
                   </a>
               </span>
-              <!-- Dataset Link.
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a> -->
             </div>
 
           </div>
@@ -166,13 +107,26 @@
   </div>
 </section>
 
+
+
 <section class="hero teaser">
+  <div class="b-dics" style="width: 40%; margin: auto;">
+    <img src="./static/images/us_vs_sugar/cropped_garden_image.jpeg" alt="Reference">
+    <img src="./static/images/us_vs_sugar/cropped_garden_new2_sugar.png" alt="SuGaR">
+    <img src="./static/images/us_vs_sugar/cropped_garden_new2_baked.png" alt="BakedSDF">
+    <img src="./static/images/us_vs_sugar/cropped_garden_new2_ours.png" alt="Ours">
+  </div>
+
+  <br>
+  <h2 class="subtitle has-text-centered" style="font-size: 1.5vw; margin: auto;">
+    TL;DR: We present a fast and accurate method to reconstruct smooth, geometrically-consistent surfaces from Gaussian Splatting models.
+  </h2>
+</section>
+
+<section class="pipeline"></section>
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img src="./static/images/pipeline.png" alt="Pipeline Image">
-      <h2 class="subtitle has-text-centered">
-        A fast and accurate method for surface reconstruction based on Gaussian Splatting.
-      </h2>
     </div>
   </div>
 </section>
@@ -207,49 +161,78 @@
       </div>
     </div>
     <!--/ Abstract. -->
-    
-    <!-- elephant -->
-    <model-viewer alt="dancer" src="./static/glb/dancer.glb" ar shadow-intensity="2" exposure="0.4" style="width: 100%; height: 600px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
-
-    test
-    <div class="b-dics">
-      <img src="./static/images/us_vs_sugar/cropped_hat_image.png">
-      <img src="./static/images/us_vs_sugar/cropped_hat_sugar.png" alt="SuGaR">
-      <img src="./static/images/us_vs_sugar/cropped_hat_ours.png" alt="Ours">
-  </div>
-    test2
-
-    <!-- <div class="image-compare-container">
-      <div class="left-image">
-          <img src="static/images/us_vs_sugar/cropped_hat_image.png" alt="Description of Image"/>
-      </div>
-      <div class="image-compare" data-label-before="SuGaR" data-label-after="Ours">
-          <img src="static/images/us_vs_sugar/cropped_hat_sugar.png" alt=""/>
-          <img src="static/images/us_vs_sugar/cropped_hat_ours.png" alt=""/>
-      </div>
-    </div>
-    
-    <div class="image-compare-container">
-        <div class="left-image">
-            <img src="path/to/your/left/image.png" alt="Description of Image"/>
-        </div>
-        <div class="image-compare" data-label-before="SuGaR" data-label-after="Ours">
-            <img src="static/images/us_vs_sugar/cropped_hat_sugar.png" alt=""/>
-            <img src="static/images/us_vs_sugar/cropped_hat_ours.png" alt=""/>
-        </div>
-    </div> -->
-
-
-    <!-- <div class="image-compare" data-label-before="SuGaR" data-label-after="Ours" data-width="100%">
-      <img src="static/images/us_vs_sugar/cropped_hat_sugar.png" alt=""/>
-      <img src="static/images/us_vs_sugar/cropped_hat_ours.png" alt=""/>
-    </div>
-    <div class="image-compare" data-label-before="SuGaR" data-label-after="Ours" data-width="100%">
-      <img src="static/images/us_vs_sugar/cropped_hat_image.png" alt=""/>
-      <img src="static/images/us_vs_sugar/cropped_hat_image.png" alt=""/>
-    </div> -->
   </div>
 </section>
+
+<p class="title is-3 mt-5 has-text-centered"> Comparison with SuGaR </p>
+<div class="b-dics" style="width: 30%; margin: auto;">
+  <img src="./static/images/us_vs_sugar/cropped_hat_image.png" alt="Reference">
+  <img src="./static/images/us_vs_sugar/cropped_hat_sugar.png" alt="SuGaR">
+  <img src="./static/images/us_vs_sugar/cropped_hat_ours.png" alt="Ours">
+</div>
+<br>
+<div class="b-dics" style="width: 30%; margin: auto;">
+  <img src="./static/images/us_vs_sugar/cropped_shoe_image.png" alt="Reference">
+  <img src="./static/images/us_vs_sugar/cropped_shoe_sugar.png" alt="SuGaR">
+  <img src="./static/images/us_vs_sugar/cropped_shoe_ours.png" alt="Ours">
+</div>
+<br>
+<div class="b-dics" style="width: 30%; margin: auto;">
+  <img src="./static/images/us_vs_sugar/cropped_videogame_image.png" alt="Reference">
+  <img src="./static/images/us_vs_sugar/cropped_videogame_sugar.png" alt="SuGaR">
+  <img src="./static/images/us_vs_sugar/cropped_videogame_ours.png" alt="Ours">
+</div>
+</div>
+
+
+<p class="title is-3 mt-5 has-text-centered"> Masking </p>
+<div class="b-dics" style="width: 30%; margin: auto;">
+  <img src="./static/images/masked/cropped_apples_image.png" alt="Reference">
+  <img src="./static/images/masked/cropped_apples_ours.png" alt="Ours">
+  <img src="./static/images/masked/cropped_apples_ours_masked.png" alt="Ours Masked">
+</div>
+<br>
+<div class="b-dics" style="width: 30%; margin: auto;">
+  <img src="./static/images/masked/cropped_coffee_image.png" alt="Reference">
+  <img src="./static/images/masked/cropped_coffee_ours.png" alt="Ours">
+  <img src="./static/images/masked/cropped_coffee_ours_masked.png" alt="Ours Masked">
+</div>
+
+<p class="title is-3 mt-5 has-text-centered"> MobileBrick Dataset - Comparison with MVSFormer </p>
+<div class="b-dics" style="width: 30%; margin: auto;">
+  <img src="./static/images/mobile_brick/cropped_aston_gt.png" alt="Ground Truth">
+  <img src="./static/images/mobile_brick/cropped_aston_mvs.png" alt="MVSFormer">
+  <img src="./static/images/mobile_brick/cropped_aston_ours.png" alt="Ours">
+</div>
+<br>
+<div class="b-dics" style="width: 30%; margin: auto;">
+  <img src="./static/images/mobile_brick/cropped_big_ben_gt.png" alt="Ground Truth">
+  <img src="./static/images/mobile_brick/cropped_big_ben_mvs.png" alt="MVSFormer">
+  <img src="./static/images/mobile_brick/cropped_big_ben_ours.png" alt="Ours">
+</div>
+<br>
+<div class="b-dics" style="width: 30%; margin: auto;">
+  <img src="./static/images/mobile_brick/cropped_castle_gt.png" alt="Ground Truth">
+  <img src="./static/images/mobile_brick/cropped_castle_mvs.png" alt="MVSFormer">
+  <img src="./static/images/mobile_brick/cropped_castle_ours.png" alt="Ours">
+</div>
+
+<p class="title is-3 mt-5 has-text-centered"> Interactive 3D Meshes </p>
+<div class="level">
+  <div class="level-item">
+    <model-viewer alt="dancer" src="./static/glb/dancer.glb" ar shadow-intensity="2" exposure="0.4" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+  </div>
+  <div class="level-item">
+    <model-viewer alt="dancer" src="./static/glb/dancer.glb" ar shadow-intensity="2" exposure="0.4" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+  </div>
+  <div class="level-item">
+    <model-viewer alt="dancer" src="./static/glb/dancer.glb" ar shadow-intensity="2" exposure="0.4" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+  </div>
+  <div class="level-item">
+    <model-viewer alt="dancer" src="./static/glb/dancer.glb" ar shadow-intensity="2" exposure="0.4" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+  </div>
+</div>
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -257,11 +240,9 @@
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
   title     = {Nerfies: Deformable Neural Radiance Fields},
   journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+  year      = {2021},}</code></pre>
   </div>
 </section>
-
 
 <footer class="footer">
   <div class="container">
@@ -294,57 +275,5 @@
     </div>
   </div>
 </footer>
-
-
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const viewers = document.querySelectorAll(".image-compare");
-    
-    viewers.forEach((element) => {
-        // Read configuration from data attributes
-        const labelBefore = element.getAttribute('data-label-before');
-        const labelAfter = element.getAttribute('data-label-after');
-        const width = element.getAttribute('data-width');
-        const height = element.getAttribute('data-height');
-
-        // Apply size directly (optional, depends on your setup)
-        element.style.width = width;
-        element.style.height = height;
-
-        // Initialize ImageCompare with specific options for this element
-        let view = new ImageCompare(element, {
-            // Other options...
-            showLabels: true,
-            hoverStart: true,
-            labelOptions: {
-                before: labelBefore,
-                after: labelAfter,
-                onHover: false
-            }
-        }).mount();
-    });
-  });
-
-</script> -->
-
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', function () {
-      const element = document.getElementById("image-compare");
-      const options = {
-          controlColor: "#FFFFFF",
-          controlShadow: true,
-          // Enable labels
-          showLabels: true,
-          fluidMode: true,
-          labelOptions: {
-              before: 'SuGaR', // Text for the "before" label
-              after: 'Ours', // Text for the "after" label
-              onHover: false // Show labels all the time, not just on hover
-          },
-          // Other options...
-      };
-      const viewer = new ImageCompare(element, options).mount();
-  });
-</script> -->
 </body>
 </html>
