@@ -2,23 +2,19 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="gs2mesh: Surface Reconstruction from Gaussian Splatting via Novel Stereo Views.">
+  <meta name="description" content="gs2mesh: Surface Reconstruction from Gaussian Splatting via Novel Stereo Views.">
   <meta name="keywords" content="gs2mesh">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Surface Reconstruction from Gaussian Splatting via Novel Stereo Views</title>
 
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" >
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -27,25 +23,26 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>  <!-- Import the component -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
-  <style>
-    .image-compare-container {
-        display: flex;
-        width: 100%;
-    }
 
-    .left-image, .image-compare {
-        width: 50%;
-    }
-
-    .left-image img {
-        width: 100%; /* Make the image fill the container */
-        height: auto; /* Keep the image aspect ratio */
-    }
-  </style>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./static/css/dics.min.css">
+  <script src="./static/js/dics.min.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', domReady);
+      function domReady() {
+          for (const e of document.querySelectorAll(".b-dics")) {
+              new Dics({
+                  container: e,
+                  textPosition: "top"
+              });
+          }
+      }
+  </script>
 </head>
 <body>
-<script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -214,6 +211,14 @@
     <!-- elephant -->
     <model-viewer alt="dancer" src="./static/glb/dancer.glb" ar shadow-intensity="2" exposure="0.4" style="width: 100%; height: 600px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
 
+    test
+    <div class="b-dics">
+      <img src="./static/images/us_vs_sugar/cropped_hat_image.png">
+      <img src="./static/images/us_vs_sugar/cropped_hat_sugar.png" alt="SuGaR">
+      <img src="./static/images/us_vs_sugar/cropped_hat_ours.png" alt="Ours">
+  </div>
+    test2
+
     <!-- <div class="image-compare-container">
       <div class="left-image">
           <img src="static/images/us_vs_sugar/cropped_hat_image.png" alt="Description of Image"/>
@@ -234,16 +239,17 @@
         </div>
     </div> -->
 
-    
-    <div class="image-compare" data-label-before="SuGaR" data-label-after="Ours" data-width="100%">
-      <img src="static/images/us_vs_sugar/cropped_hat_sugar.png" alt=""/>
-      <img src="static/images/us_vs_sugar/cropped_hat_ours.png" alt=""/>
-    </div>
-    <div class="image-compare" data-label-before="SuGaR" data-label-after="Ours" data-width="100%">
-      <img src="static/images/us_vs_sugar/cropped_hat_sugar.png" alt=""/>
-      <img src="static/images/us_vs_sugar/cropped_hat_ours.png" alt=""/>
-    </div>
 
+    <!-- <div class="image-compare" data-label-before="SuGaR" data-label-after="Ours" data-width="100%">
+      <img src="static/images/us_vs_sugar/cropped_hat_sugar.png" alt=""/>
+      <img src="static/images/us_vs_sugar/cropped_hat_ours.png" alt=""/>
+    </div>
+    <div class="image-compare" data-label-before="SuGaR" data-label-after="Ours" data-width="100%">
+      <img src="static/images/us_vs_sugar/cropped_hat_image.png" alt=""/>
+      <img src="static/images/us_vs_sugar/cropped_hat_image.png" alt=""/>
+    </div> -->
+  </div>
+</section>
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -290,7 +296,7 @@
 </footer>
 
 
-<script>
+<!-- <script>
   document.addEventListener('DOMContentLoaded', function () {
     const viewers = document.querySelectorAll(".image-compare");
     
@@ -319,7 +325,7 @@
     });
   });
 
-</script>
+</script> -->
 
 <!-- <script>
   document.addEventListener('DOMContentLoaded', function () {
