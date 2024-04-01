@@ -40,6 +40,15 @@
         }
     }
   </script>
+  <style>
+    .figure-row {
+      display: flex;
+      justify-content: center; /* This centers the figures in the row */
+      align-items: center; /* This ensures the figures are aligned vertically */
+      flex-wrap: wrap; /* This allows figures to wrap into new lines on smaller screens */
+      gap: 2px; /* Adjust the space between figures */
+    }
+  </style>
 
 </head>
 <body>
@@ -139,7 +148,7 @@
         <div class="content has-text-justified">
           <p>
             The Gaussian splatting for radiance field rendering method has recently emerged as an efficient approach for accurate scene representation.
-            It optimizes the location, size, color, and shape of a cloud of 3D Gaussian elements to visually match, after projection, or {\it splatting}, a set of given images taken from various viewing directions. 
+            It optimizes the location, size, color, and shape of a cloud of 3D Gaussian elements to visually match, after projection, or splatting, a set of given images taken from various viewing directions. 
             And yet, despite the proximity of Gaussian elements to the shape boundaries, direct surface reconstruction of objects in the scene is a challenge. 
           </p>
           <p>
@@ -162,57 +171,74 @@
   </div>
 </section>
 
+
 <p class="title is-3 mt-5 has-text-centered"> Comparison with SuGaR </p>
-<div class="b-dics" style="width: 50%; margin: auto;">
-  <img src="./static/images/us_vs_sugar/cropped_hat_image.png" alt="Reference">
-  <img src="./static/images/us_vs_sugar/cropped_hat_sugar.png" alt="SuGaR">
-  <img src="./static/images/us_vs_sugar/cropped_hat_ours.png" alt="Ours">
-</div>
-<br>
-<div class="b-dics" style="width: 50%; margin: auto;">
-  <img src="./static/images/us_vs_sugar/cropped_shoe_image.png" alt="Reference">
-  <img src="./static/images/us_vs_sugar/cropped_shoe_sugar.png" alt="SuGaR">
-  <img src="./static/images/us_vs_sugar/cropped_shoe_ours.png" alt="Ours">
-</div>
-<br>
-<div class="b-dics" style="width: 50%; margin: auto;">
-  <img src="./static/images/us_vs_sugar/cropped_videogame_image.png" alt="Reference">
-  <img src="./static/images/us_vs_sugar/cropped_videogame_sugar.png" alt="SuGaR">
-  <img src="./static/images/us_vs_sugar/cropped_videogame_ours.png" alt="Ours">
-</div>
+<div class="level">
+  <div class="level-item">
+    <div class="b-dics" style="width: 300px; height:300px;">
+      <img src="./static/images/us_vs_sugar/cropped_hat_image.png" alt="Reference">
+      <img src="./static/images/us_vs_sugar/cropped_hat_sugar.png" alt="SuGaR">
+      <img src="./static/images/us_vs_sugar/cropped_hat_ours.png" alt="Ours">
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="b-dics" style="width: 300px; height:300px;">
+      <img src="./static/images/us_vs_sugar/cropped_shoe_image.png" alt="Reference">
+      <img src="./static/images/us_vs_sugar/cropped_shoe_sugar.png" alt="SuGaR">
+      <img src="./static/images/us_vs_sugar/cropped_shoe_ours.png" alt="Ours">
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="b-dics" style="width: 300px; height:300px;">
+      <img src="./static/images/us_vs_sugar/cropped_videogame_image.png" alt="Reference">
+      <img src="./static/images/us_vs_sugar/cropped_videogame_sugar.png" alt="SuGaR">
+      <img src="./static/images/us_vs_sugar/cropped_videogame_ours.png" alt="Ours">
+    </div>
+  </div>
 </div>
 
 
 <p class="title is-3 mt-5 has-text-centered"> Masking </p>
-<div class="b-dics" style="width: 50%; margin: auto;">
-  <img src="./static/images/masked/cropped_apples_image.png" alt="Reference">
-  <img src="./static/images/masked/cropped_apples_ours.png" alt="Ours">
-  <img src="./static/images/masked/cropped_apples_ours_masked.png" alt="Ours Masked">
-</div>
-<br>
-<div class="b-dics" style="width: 50%; margin: auto;">
-  <img src="./static/images/masked/cropped_coffee_image.png" alt="Reference">
-  <img src="./static/images/masked/cropped_coffee_ours.png" alt="Ours">
-  <img src="./static/images/masked/cropped_coffee_ours_masked.png" alt="Ours Masked">
+<div class="level">
+  <div class="level-item">
+    <div class="b-dics" style="width: 300px; height:300px;">
+      <img src="./static/images/masked/cropped_apples_image.png" alt="Reference">
+      <img src="./static/images/masked/cropped_apples_ours.png" alt="Ours">
+      <img src="./static/images/masked/cropped_apples_ours_masked.png" alt="Ours Masked">
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="b-dics" style="width: 300px; height:300px;">
+      <img src="./static/images/masked/cropped_coffee_image.png" alt="Reference">
+      <img src="./static/images/masked/cropped_coffee_ours.png" alt="Ours">
+      <img src="./static/images/masked/cropped_coffee_ours_masked.png" alt="Ours Masked">
+    </div>
+  </div>
 </div>
 
 <p class="title is-3 mt-5 has-text-centered"> MobileBrick Dataset - Comparison with MVSFormer </p>
-<div class="b-dics" style="width: 50%; margin: auto;">
-  <img src="./static/images/mobile_brick/cropped_aston_gt.png" alt="Ground Truth">
-  <img src="./static/images/mobile_brick/cropped_aston_mvs.png" alt="MVSFormer">
-  <img src="./static/images/mobile_brick/cropped_aston_ours.png" alt="Ours">
-</div>
-<br>
-<div class="b-dics" style="width: 50%; margin: auto;">
-  <img src="./static/images/mobile_brick/cropped_big_ben_gt.png" alt="Ground Truth">
-  <img src="./static/images/mobile_brick/cropped_big_ben_mvs.png" alt="MVSFormer">
-  <img src="./static/images/mobile_brick/cropped_big_ben_ours.png" alt="Ours">
-</div>
-<br>
-<div class="b-dics" style="width: 50%; margin: auto;">
-  <img src="./static/images/mobile_brick/cropped_castle_gt.png" alt="Ground Truth">
-  <img src="./static/images/mobile_brick/cropped_castle_mvs.png" alt="MVSFormer">
-  <img src="./static/images/mobile_brick/cropped_castle_ours.png" alt="Ours">
+<div class="level">
+  <div class="level-item">
+    <div class="b-dics" style="width: 300px; height:300px;">
+      <img src="./static/images/mobile_brick/cropped_aston_gt.png" alt="Ground Truth">
+      <img src="./static/images/mobile_brick/cropped_aston_mvs.png" alt="MVSFormer">
+      <img src="./static/images/mobile_brick/cropped_aston_ours.png" alt="Ours">
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="b-dics" style="width: 300px; height:300px;">
+      <img src="./static/images/mobile_brick/cropped_big_ben_gt.png" alt="Ground Truth">
+      <img src="./static/images/mobile_brick/cropped_big_ben_mvs.png" alt="MVSFormer">
+      <img src="./static/images/mobile_brick/cropped_big_ben_ours.png" alt="Ours">
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="b-dics" style="width: 300px; height:300px;">
+      <img src="./static/images/mobile_brick/cropped_castle_gt.png" alt="Ground Truth">
+      <img src="./static/images/mobile_brick/cropped_castle_mvs.png" alt="MVSFormer">
+      <img src="./static/images/mobile_brick/cropped_castle_ours.png" alt="Ours">
+    </div>
+  </div>
 </div>
 
 <p class="title is-3 mt-5 has-text-centered"> Interactive 3D Meshes </p>
@@ -273,5 +299,36 @@
     </div>
   </div>
 </footer>
+<script>
+  function openFigure(evt, figureName) {
+      var i, tabcontent, tablinks, bdics;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none"; // Hide all tab content by default
+          // Also set opacity of .b-dics elements to 0 to make them invisible
+          bdics = tabcontent[i].getElementsByClassName("b-dics");
+          for (var j = 0; j < bdics.length; j++) {
+              bdics[j].style.opacity = "0";
+          }
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", ""); // Remove "active" class from all tabs
+      }
+      document.getElementById(figureName).style.display = "block"; // Show the selected tab content
+      evt.currentTarget.className += " active"; // Add "active" class to the current tab
+      
+      // Set opacity of .b-dics elements in the newly active tab to 1 to make them visible
+      bdics = document.getElementById(figureName).getElementsByClassName("b-dics");
+      for (i = 0; i < bdics.length; i++) {
+          bdics[i].style.opacity = "1";
+      }
+  }
+
+  // Auto-click the first tab on page load
+  document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector(".tablinks").click();
+  });
+</script>
 </body>
 </html>
