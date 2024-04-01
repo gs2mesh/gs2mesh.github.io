@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/us_vs_sugar/cropped_hat_ours.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -40,16 +40,6 @@
         }
     }
   </script>
-  <style>
-    .figure-row {
-      display: flex;
-      justify-content: center; /* This centers the figures in the row */
-      align-items: center; /* This ensures the figures are aligned vertically */
-      flex-wrap: wrap; /* This allows figures to wrap into new lines on smaller screens */
-      gap: 2px; /* Adjust the space between figures */
-    }
-  </style>
-
 </head>
 <body>
 
@@ -117,16 +107,27 @@
 </section>
 
 <section class="hero teaser">
-  <div class="b-dics" style="width: 50%; margin:auto;">
+  <div class="level">
+    <div class="level-item">
+      <div class="b-dics" style="width: 40vw; height:300px;">
+        <img src="./static/images/us_vs_sugar/cropped_garden_image.jpeg" alt="Reference">
+        <img src="./static/images/us_vs_sugar/cropped_garden_new2_sugar.png" alt="SuGaR">
+        <img src="./static/images/us_vs_sugar/cropped_garden_new2_baked.png" alt="BakedSDF">
+        <img src="./static/images/us_vs_sugar/cropped_garden_new2_ours.png" alt="Ours">
+      </div>
+    </div>
+  </div>
+  <!-- <div class="b-dics" style="width: 50%; margin:auto;">
     <img src="./static/images/us_vs_sugar/cropped_garden_image.jpeg" alt="Reference">
     <img src="./static/images/us_vs_sugar/cropped_garden_new2_sugar.png" alt="SuGaR">
     <img src="./static/images/us_vs_sugar/cropped_garden_new2_baked.png" alt="BakedSDF">
     <img src="./static/images/us_vs_sugar/cropped_garden_new2_ours.png" alt="Ours">
-  </div>
+  </div> -->
 
   <br>
   <h2 class="subtitle has-text-centered" style="font-size: 1.5vw; margin: auto;">
     TL;DR: We present a fast and accurate method to reconstruct smooth, geometrically-consistent surfaces from Gaussian Splatting models.
+    Our method only needs about 5 minutes of addtitional compute time on top of the 3DGS scence capture, for a typical in-the-wild scene.
   </h2>
 </section>
 
@@ -172,24 +173,31 @@
 </section>
 
 
-<p class="title is-3 mt-5 has-text-centered"> Comparison with SuGaR </p>
+<p class="title is-3 mt-5 has-text-centered"> In-the-Wild Scenes from Uncontrolled Smartphone Videos - Comparison with SuGaR </p>
 <div class="level">
   <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
+    <div class="b-dics" style="width: 20vw; height:300px;">
+      <img src="./static/images/us_vs_sugar/cropped_amit_image.png" alt="Reference">
+      <img src="./static/images/us_vs_sugar/cropped_amit_sugar.png" alt="SuGaR">
+      <img src="./static/images/us_vs_sugar/cropped_amit_ours.png" alt="Ours">
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="b-dics" style="width: 20vw; height:300px;">
       <img src="./static/images/us_vs_sugar/cropped_hat_image.png" alt="Reference">
       <img src="./static/images/us_vs_sugar/cropped_hat_sugar.png" alt="SuGaR">
       <img src="./static/images/us_vs_sugar/cropped_hat_ours.png" alt="Ours">
     </div>
   </div>
   <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
+    <div class="b-dics" style="width: 20vw; height:300px;">
       <img src="./static/images/us_vs_sugar/cropped_shoe_image.png" alt="Reference">
       <img src="./static/images/us_vs_sugar/cropped_shoe_sugar.png" alt="SuGaR">
       <img src="./static/images/us_vs_sugar/cropped_shoe_ours.png" alt="Ours">
     </div>
   </div>
   <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
+    <div class="b-dics" style="width: 20vw; height:300px;">
       <img src="./static/images/us_vs_sugar/cropped_videogame_image.png" alt="Reference">
       <img src="./static/images/us_vs_sugar/cropped_videogame_sugar.png" alt="SuGaR">
       <img src="./static/images/us_vs_sugar/cropped_videogame_ours.png" alt="Ours">
@@ -198,20 +206,34 @@
 </div>
 
 
-<p class="title is-3 mt-5 has-text-centered"> Masking </p>
+<p class="title is-3 mt-5 has-text-centered"> Semi-Automatic Masking using SAM and Depth Projections</p>
 <div class="level">
   <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
+    <div class="b-dics" style="width: 20vw; height:300px;">
       <img src="./static/images/masked/cropped_apples_image.png" alt="Reference">
       <img src="./static/images/masked/cropped_apples_ours.png" alt="Ours">
       <img src="./static/images/masked/cropped_apples_ours_masked.png" alt="Ours Masked">
     </div>
   </div>
   <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
+    <div class="b-dics" style="width: 20vw; height:300px;">
       <img src="./static/images/masked/cropped_coffee_image.png" alt="Reference">
       <img src="./static/images/masked/cropped_coffee_ours.png" alt="Ours">
       <img src="./static/images/masked/cropped_coffee_ours_masked.png" alt="Ours Masked">
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="b-dics" style="width: 20vw; height:300px;">
+      <img src="./static/images/masked/cropped_sculpture_image.png" alt="Reference">
+      <img src="./static/images/masked/cropped_sculpture_ours.png" alt="Ours">
+      <img src="./static/images/masked/cropped_sculpture_ours_masked.png" alt="Ours Masked">
+    </div>
+  </div>
+  <div class="level-item">
+    <div class="b-dics" style="width: 20vw; height:300px;">
+      <img src="./static/images/masked/cropped_dancer_image.png" alt="Reference">
+      <img src="./static/images/masked/cropped_dancer_ours.png" alt="Ours">
+      <img src="./static/images/masked/cropped_dancer_ours_masked.png" alt="Ours Masked">
     </div>
   </div>
 </div>
@@ -219,116 +241,118 @@
 <p class="title is-3 mt-5 has-text-centered"> MobileBrick Dataset - Comparison with MVSFormer </p>
 <div class="level">
   <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
+    <div class="b-dics" style="width: 20vw; height:300px;">
       <img src="./static/images/mobile_brick/cropped_aston_gt.png" alt="Ground Truth">
       <img src="./static/images/mobile_brick/cropped_aston_mvs.png" alt="MVSFormer">
       <img src="./static/images/mobile_brick/cropped_aston_ours.png" alt="Ours">
     </div>
   </div>
   <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
+    <div class="b-dics" style="width: 20vw; height:300px;">
       <img src="./static/images/mobile_brick/cropped_big_ben_gt.png" alt="Ground Truth">
       <img src="./static/images/mobile_brick/cropped_big_ben_mvs.png" alt="MVSFormer">
       <img src="./static/images/mobile_brick/cropped_big_ben_ours.png" alt="Ours">
     </div>
   </div>
   <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
+    <div class="b-dics" style="width: 20vw; height:300px;">
       <img src="./static/images/mobile_brick/cropped_castle_gt.png" alt="Ground Truth">
       <img src="./static/images/mobile_brick/cropped_castle_mvs.png" alt="MVSFormer">
       <img src="./static/images/mobile_brick/cropped_castle_ours.png" alt="Ours">
     </div>
   </div>
+  <div class="level-item">
+    <div class="b-dics" style="width: 20vw; height:300px;">
+      <img src="./static/images/mobile_brick/cropped_colosseum_gt.png" alt="Ground Truth">
+      <img src="./static/images/mobile_brick/cropped_colosseum_mvs.png" alt="MVSFormer">
+      <img src="./static/images/mobile_brick/cropped_colosseum_ours.png" alt="Ours">
+    </div>
+  </div>
 </div>
 
-<p class="title is-3 mt-5 has-text-centered"> Interactive 3D Meshes </p>
+<p class="title is-3 mt-5 has-text-centered"> Interactive 3D Meshes (simplified/compressed to reduce size)</p>
 <div class="level">
   <div class="level-item">
-    <model-viewer alt="dancer" src="./static/glb/dancer.glb" ar shadow-intensity="2" exposure="0.4" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+    <model-viewer alt="dancer" src="./static/meshes/cactus_color_compressed.glb" ar shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
   </div>
   <div class="level-item">
-    <model-viewer alt="dancer" src="./static/glb/dancer.glb" ar shadow-intensity="2" exposure="0.4" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+    <model-viewer alt="flowers" src="./static/meshes/elephant_color_compressed.glb" ar shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
   </div>
   <div class="level-item">
-    <model-viewer alt="dancer" src="./static/glb/dancer.glb" ar shadow-intensity="2" exposure="0.4" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+    <model-viewer alt="elephant" src="./static/meshes/orchid_color_compressed.glb" ar shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
   </div>
   <div class="level-item">
-    <model-viewer alt="dancer" src="./static/glb/dancer.glb" ar shadow-intensity="2" exposure="0.4" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+    <model-viewer alt="dancer" src="./static/meshes/truck_color_simplified_compressed.glb" ar shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
   </div>
 </div>
 
-<section class="section" id="BibTeX">
+<section class="section" id="BibTeX</section>">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},}</code></pre>
+    <pre><code>@article{wolf2024gs2mesh,
+  author    = {Wolf, Yaniv and Bracha, Amit and Kimmel, Ron},
+  title     = {Surface Reconstruction from Gaussian Splatting via Novel Stereo Views},
+  journal   = {arxiv},
+  year      = {2024},
+  url       = {https://gs2mesh.github.io}, }</code></pre>
+  
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">References</h2>
+
+        <div class="content has-text-justified">
+          <p>
+          Barron, Jonathan T., et al. "Mip-nerf 360: Unbounded anti-aliased neural radiance fields." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2022.
+          </p>
+          <p>
+          Cao, Chenjie, Xinlin Ren, and Yanwei Fu. "MVSFormer: Multi-View stereo by learning robust image features and temperature-based depth." arXiv preprint arXiv:2208.02541 (2022).
+          </p>
+          <p>
+          Guédon, Antoine, and Vincent Lepetit. "SuGaR: Surface-aligned Gaussian splatting for efficient 3D mesh reconstruction and high-quality mesh rendering." arXiv preprint arXiv:2311.12775 (2023).
+          </p>  
+          <p>
+          Kerbl, Bernhard, et al. "3D Gaussian splatting for real-time radiance field rendering." ACM Transactions on Graphics 42.4 (2023): 1-14.
+          </p>
+          <p>
+          Kirillov, Alexander, et al. "Segment Anything." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023.
+          </p>
+          <p>
+          Knapitsch, Arno, et al. "Tanks and Temples: Benchmarking large-scale scene reconstruction." ACM Transactions on Graphics (ToG) 36.4 (2017): 1-13.
+          </p>
+          <p>
+          Li, Kejie, et al. "MobileBrick: Building LEGO for 3D reconstruction on mobile devices." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.
+          </p>
+          <p>
+          Yariv, Lior, et al. "BakedSDF: Meshing neural SDFs for real-time view synthesis." ACM SIGGRAPH 2023 Conference Proceedings. 2023.
+          </p>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
   </div>
 </section>
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            This website is based on <a href="https://github.com/nerfies/nerfies.github.io">this</a> source code, 
+            <a href="https://github.com/abelcabezaroman/definitive-image-comparison-slider">this</a> code for the comparison slider
+            and <a href="https://github.com/google/model-viewer?tab=readme-ov-file">this</a> code for the 3D model viewer. 
+            3D models were compressed using <a href="https://gltf.report/">this</a>.
           </p>
         </div>
       </div>
     </div>
   </div>
 </footer>
-<script>
-  function openFigure(evt, figureName) {
-      var i, tabcontent, tablinks, bdics;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none"; // Hide all tab content by default
-          // Also set opacity of .b-dics elements to 0 to make them invisible
-          bdics = tabcontent[i].getElementsByClassName("b-dics");
-          for (var j = 0; j < bdics.length; j++) {
-              bdics[j].style.opacity = "0";
-          }
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", ""); // Remove "active" class from all tabs
-      }
-      document.getElementById(figureName).style.display = "block"; // Show the selected tab content
-      evt.currentTarget.className += " active"; // Add "active" class to the current tab
-      
-      // Set opacity of .b-dics elements in the newly active tab to 1 to make them visible
-      bdics = document.getElementById(figureName).getElementsByClassName("b-dics");
-      for (i = 0; i < bdics.length; i++) {
-          bdics[i].style.opacity = "1";
-      }
-  }
-
-  // Auto-click the first tab on page load
-  document.addEventListener("DOMContentLoaded", function() {
-      document.querySelector(".tablinks").click();
-  });
-</script>
 </body>
 </html>
