@@ -6,6 +6,11 @@
   <meta name="keywords" content="gs2mesh">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Surface Reconstruction from Gaussian Splatting via Novel Stereo Views</title>
+  <style>
+    .title {
+      font-size: 2rem;
+    }
+  </style>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" >
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -40,6 +45,19 @@
         }
     }
   </script>
+  <style>
+    .caption-container {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    @media (max-width: 600px) {
+      .caption-container {
+        font-size: 1em;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -48,7 +66,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Surface Reconstruction from Gaussian Splatting via Novel Stereo Views</h1>
+          <h1 class="title is-3 publication-title">Surface Reconstruction from Gaussian Splatting via Novel Stereo Views</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               Yaniv Wolf</a><sup>*</sup>,</span>
@@ -273,40 +291,75 @@
 <p class="title is-4 mt-5 has-text-centered"> Tanks and Temples/In the Wild</p>
 <div class="level">
   <div class="level-item">
-    <model-viewer alt="dancer" src="./static/meshes/truck_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+    <figure style="width: 100%; text-align: center;">
+      <model-viewer alt="dancer" src="./static/meshes/truck_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+      <figcaption><strong>Tanks and Temples: Truck</strong></figcaption>
+    </figure>
   </div>
   <div class="level-item">
-    <model-viewer alt="flowers" src="./static/meshes/elephant_ours_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+    <figure style="width: 100%; text-align: center;">
+      <model-viewer alt="flowers" src="./static/meshes/elephant_ours_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+      <figcaption><strong>In the Wild: Elephant</strong></figcaption>
+    </figure>
   </div>
   <div class="level-item">
-    <model-viewer alt="elephant" src="./static/meshes/orchid_ours_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+    <figure style="width: 100%; text-align: center;">
+      <model-viewer alt="elephant" src="./static/meshes/orchid_ours_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+      <figcaption><strong>In the Wild: Orchid</strong></figcaption>
+    </figure>
   </div>
   <div class="level-item">
-    <model-viewer alt="dancer" src="./static/meshes/cactus_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+    <figure style="width: 100%; text-align: center;">
+      <model-viewer alt="dancer" src="./static/meshes/cactus_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
+      <figcaption><strong>In the Wild: Cactus</strong></figcaption>
+    </figure>
   </div>
 </div>
+
 <p class="title is-4 mt-5 has-text-centered"> DTU</p>
 <div class="level">
   <div class="level-item">
-    <model-viewer alt="dancer" src="./static/meshes/DTU/dtu_24_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
+    <figure style="width: 100%; text-align: center;">
+      <model-viewer alt="dancer" src="./static/meshes/DTU/dtu_24_compressed.glb" shadow-intensity="1" exposure="2.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
+      <figcaption><strong>DTU: Scan 24</strong></figcaption>
+    </figure>
   </div>
   <div class="level-item">
-    <model-viewer alt="flowers" src="./static/meshes/DTU/dtu_37_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
+    <figure style="width: 100%; text-align: center;">
+      <model-viewer alt="flowers" src="./static/meshes/DTU/dtu_37_compressed.glb" shadow-intensity="1" exposure="2.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
+      <figcaption><strong>DTU: Scan 37</strong></figcaption>
+    </figure>
   </div>
   <div class="level-item">
-    <model-viewer alt="elephant" src="./static/meshes/DTU/dtu_105_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
+    <figure style="width: 100%; text-align: center;">
+      <model-viewer alt="elephant" src="./static/meshes/DTU/dtu_105_compressed.glb" shadow-intensity="1" exposure="2.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
+      <figcaption><strong>DTU: Scan 105</strong></figcaption>
+    </figure>
   </div>
   <div class="level-item">
-    <model-viewer alt="dancer" src="./static/meshes/DTU/dtu_106_compressed.glb" shadow-intensity="1" exposure="3.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
+    <figure style="width: 100%; text-align: center;">
+      <model-viewer alt="dancer" src="./static/meshes/DTU/dtu_106_compressed.glb" shadow-intensity="1" exposure="2.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
+      <figcaption><strong>DTU: Scan 106</strong></figcaption>
+    </figure>
   </div>
 </div>
 
 <p class="title is-3 mt-5 has-text-centered"> DTU Results</p>
+<div class="caption-container">
+  Quantitative results on the DTU Dataset. Chamfer distance - lower is better. Red-1<sup>st</sup>, Orange-2<sup>nd</sup>, Yellow-3<sup>rd</sup>. Table adapted from Gaussian Opacity Fields.
+  Our method surpasses other Splatting-based methods, and is comparable with state-of-the-art neural methods such as Neuralangelo while taking significantly less time to run.
+</div>
+
 <iframe src="table.html?v=1" width="100%" height="500px" style="border:none;"></iframe>
+
+<!-- <p class="bottom-caption">Our method surpasses other Splatting-based methods, and is comparable with state-of-the-art neural methods such as Neuralangelo while taking significantly less time to run.</p> -->
+
+<!-- <iframe src="table.html?v=1" width="100%" height="500px" style="border:none;"></iframe> -->
+
 
 <section class="section" id="BibTeX</section>">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
     <pre><code>@article{wolf2024surface,
       title={Surface Reconstruction from Gaussian Splatting via Novel Stereo Views},
       author={Wolf, Yaniv and Bracha, Amit and Kimmel, Ron},
@@ -321,7 +374,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">References</h2>
+        <h2 class="title is-3 has-text-centered">References</h2>
 
         <div class="content has-text-justified">
           <p>
