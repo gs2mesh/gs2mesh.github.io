@@ -108,13 +108,23 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://gs2mesh.github.io"
+                <a href="https://github.com/yanivw12/gs2mesh/tree/main"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code (coming soon)</span>
+                  <span>Code</span>
                   </a>
+              </span>
+              <!-- Colab Link. -->
+              <span class="link-block">
+                <a href="https://gs2mesh.github.io"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="Colab Logo" style="height: 1em; vertical-align: middle;">
+                  </span>
+                  <span>Colab Demo (coming soon)</span>
+                </a>
               </span>
             </div>
 
@@ -166,22 +176,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The Gaussian splatting for radiance field rendering method has recently emerged as an efficient approach for accurate scene representation.
-            It optimizes the location, size, color, and shape of a cloud of 3D Gaussian elements to visually match, after projection, or splatting, a set of given images taken from various viewing directions. 
-            And yet, despite the proximity of Gaussian elements to the shape boundaries, direct surface reconstruction of objects in the scene is a challenge. 
+          Recently, 3D Gaussian Splatting (3DGS) has emerged as an efficient approach for accurately representing scenes. However, despite its superior novel view synthesis capabilities, extracting the geometry of the scene directly from the Gaussian properties remains a challenge, as those are optimized based on a photometric loss. While some concurrent models have tried adding geometric constraints during the Gaussian optimization process, they still produce noisy, unrealistic surfaces.
           </p>
           <p>
-            We propose a novel approach for surface reconstruction from Gaussian splatting models.
-            Rather than relying on the Gaussian elements' locations as a prior for surface reconstruction, we leverage the superior novel-view synthesis capabilities of 3DGS.
-            To that end, we use the Gaussian splatting model to render pairs of stereo-calibrated novel views from which we extract depth profiles using a stereo matching method.
-            We then combine the extracted RGB-D images into a geometrically consistent surface. 
-            The resulting reconstruction is more accurate and shows finer details when compared to other methods for surface reconstruction from Gaussian splatting models, while requiring significantly less compute time compared to other surface reconstruction methods.
+          We propose a novel approach for bridging the gap between the noisy 3DGS representation and the smooth 3D mesh representation, by injecting real-world knowledge into the depth extraction process. Instead of extracting the geometry of the scene directly from the Gaussian properties, we instead extract the geometry through a pre-trained stereo-matching model. We render stereo-aligned pairs of images corresponding to the original training poses, feed the pairs into a stereo model to get a depth profile, and finally fuse all of the profiles together to get a single mesh.
           </p>
           <p>
-            We performed extensive testing of the proposed method on in-the-wild scenes, taken by a smartphone, showcasing its superior reconstruction abilities. 
-            Additionally, we tested the proposed method on the Tanks and Temples benchmark, and it has surpassed the current leading method for surface reconstruction from Gaussian splatting models.
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+          The resulting reconstruction is smoother, more accurate and shows more intricate details compared to other methods for surface reconstruction from Gaussian Splatting, while only requiring a small overhead on top of the fairly short 3DGS optimization process.
+          </p>
+          <p>
+          We performed extensive testing of the proposed method on in-the-wild scenes, obtained using a smartphone, showcasing its superior reconstruction abilities. Additionally, we tested the method on the Tanks and Temples and DTU benchmarks, achieving state-of-the-art results.
           </p>
         </div>
       </div>
