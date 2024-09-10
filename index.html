@@ -61,80 +61,86 @@
 </head>
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-3 publication-title">Surface Reconstruction from Gaussian Splatting via Novel Stereo Views</h1>
-          <h2 style="font-size:1.7rem">ECCV 2024</h2>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              Yaniv Wolf</a><sup>*</sup>,</span>
-            <span class="author-block">
-              Amit Bracha</a><sup>*</sup>,</span>
-            <span class="author-block">
-              <a href="https://ron.cs.technion.ac.il/">Ron Kimmel
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <a href="https://cs.technion.ac.il/" class="author-block">Technion - Israel Institute of Technology, Haifa, Israel</a>
-          </div>
-          <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>*</sup> Indicates equal contribution</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2404.01810.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2404.01810"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://gs2mesh.github.io"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code (coming soon)</span>
-                  </a>
+            <h1 class="title is-3 publication-title">Surface Reconstruction from Gaussian Splatting via Novel Stereo Views</h1>
+            <h2 style="font-size:1.7rem">ECCV 2024</h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Yaniv Wolf</a><sup>*</sup>,</span>
+              <span class="author-block">
+                Amit Bracha</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://ron.cs.technion.ac.il/">Ron Kimmel
               </span>
             </div>
-
+  
+            <div class="is-size-5 publication-authors">
+              <a href="https://cs.technion.ac.il/" class="author-block">Technion - Israel Institute of Technology, Haifa, Israel</a>
+            </div>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>*</sup> Indicates equal contribution</span>
+            </div>
+  
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2404.01810.pdf"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2404.01810"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/yanivw12/gs2mesh/tree/main"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+                <!-- Colab Link. -->
+                <span class="link-block">
+                  <a href="https://gs2mesh.github.io"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="Colab Logo" style="height: 1em; vertical-align: middle;">
+                    </span>
+                    <span>Colab Demo (coming soon)</span>
+                  </a>
+                </span>
+              </div>
+  
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <section class="hero teaser">
-  <div class="level">
-    <div class="level-item">
-      <div class="b-dics" style="width: 600px; height:600px;">
-        <img src="./static/images/us_vs_sugar/cropped_garden_image.jpeg" alt="Reference">
-        <img src="./static/images/us_vs_sugar/cropped_garden_new2_sugar.jpeg" alt="SuGaR (2H)">
-        <img src="./static/images/us_vs_sugar/cropped_garden_new2_baked.jpeg" alt="BakedSDF (>24H)">
-        <img src="./static/images/us_vs_sugar/cropped_garden_new2_ours.jpeg" alt="Ours (1H)">
-      </div>
-    </div>
+  <div class="video-container" style="display: flex; justify-content: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/cjtmLDD8YZk?si=011_tHybkY491cpq" 
+    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+    gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
   </div>
   <br>
   <div class="container is-max-desktop">
@@ -166,23 +172,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The Gaussian splatting for radiance field rendering method has recently emerged as an efficient approach for accurate scene representation.
-            It optimizes the location, size, color, and shape of a cloud of 3D Gaussian elements to visually match, after projection, or splatting, a set of given images taken from various viewing directions. 
-            And yet, despite the proximity of Gaussian elements to the shape boundaries, direct surface reconstruction of objects in the scene is a challenge. 
-          </p>
-          <p>
-            We propose a novel approach for surface reconstruction from Gaussian splatting models.
-            Rather than relying on the Gaussian elements' locations as a prior for surface reconstruction, we leverage the superior novel-view synthesis capabilities of 3DGS.
-            To that end, we use the Gaussian splatting model to render pairs of stereo-calibrated novel views from which we extract depth profiles using a stereo matching method.
-            We then combine the extracted RGB-D images into a geometrically consistent surface. 
-            The resulting reconstruction is more accurate and shows finer details when compared to other methods for surface reconstruction from Gaussian splatting models, while requiring significantly less compute time compared to other surface reconstruction methods.
-          </p>
-          <p>
-            We performed extensive testing of the proposed method on in-the-wild scenes, taken by a smartphone, showcasing its superior reconstruction abilities. 
-            Additionally, we tested the proposed method on the Tanks and Temples benchmark, and it has surpassed the current leading method for surface reconstruction from Gaussian splatting models.
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
+            Recently, 3D Gaussian Splatting (3DGS) has emerged as an efficient approach for accurately representing scenes. However, despite its superior novel view synthesis capabilities, extracting the geometry of the scene directly from the Gaussian properties remains a challenge, as those are optimized based on a photometric loss. While some concurrent models have tried adding geometric constraints during the Gaussian optimization process, they still produce noisy, unrealistic surfaces.
+            </p>
+            <p>
+            We propose a novel approach for bridging the gap between the noisy 3DGS representation and the smooth 3D mesh representation, by injecting real-world knowledge into the depth extraction process. Instead of extracting the geometry of the scene directly from the Gaussian properties, we instead extract the geometry through a pre-trained stereo-matching model. We render stereo-aligned pairs of images corresponding to the original training poses, feed the pairs into a stereo model to get a depth profile, and finally fuse all of the profiles together to get a single mesh.
+            </p>
+            <p>
+            The resulting reconstruction is smoother, more accurate and shows more intricate details compared to other methods for surface reconstruction from Gaussian Splatting, while only requiring a small overhead on top of the fairly short 3DGS optimization process.
+            </p>
+            <p>
+            We performed extensive testing of the proposed method on in-the-wild scenes, obtained using a smartphone, showcasing its superior reconstruction abilities. Additionally, we tested the method on the Tanks and Temples and DTU benchmarks, achieving state-of-the-art results.
+            </p>
         </div>
       </div>
     </div>
@@ -191,70 +191,106 @@
 </section>
 
 
-<p class="title is-3 mt-5 has-text-centered"> In-the-Wild Scenes from Uncontrolled Smartphone Videos - Comparison with SuGaR </p>
+<p class="title is-3 mt-5 has-text-centered"> In-the-Wild Scenes from Uncontrolled Smartphone Videos</p>
 <div class="level">
   <div class="level-item">
     <div class="b-dics" style="width: 300px; height:300px;">
       <img src="./static/images/us_vs_sugar/cropped_amit_image.jpeg" alt="Reference">
-      <img src="./static/images/us_vs_sugar/cropped_amit_sugar.jpeg" alt="SuGaR">
+      <!-- <img src="./static/images/us_vs_sugar/cropped_amit_sugar.jpeg" alt="SuGaR"> -->
       <img src="./static/images/us_vs_sugar/cropped_amit_ours.jpeg" alt="Ours">
     </div>
   </div>
   <div class="level-item">
     <div class="b-dics" style="width: 300px; height:300px;">
       <img src="./static/images/us_vs_sugar/cropped_hat_image.jpeg" alt="Reference">
-      <img src="./static/images/us_vs_sugar/cropped_hat_sugar.jpeg" alt="SuGaR">
+      <!-- <img src="./static/images/us_vs_sugar/cropped_hat_sugar.jpeg" alt="SuGaR"> -->
       <img src="./static/images/us_vs_sugar/cropped_hat_ours.jpeg" alt="Ours">
     </div>
   </div>
   <div class="level-item">
     <div class="b-dics" style="width: 300px; height:300px;">
       <img src="./static/images/us_vs_sugar/cropped_shoe_image.jpeg" alt="Reference">
-      <img src="./static/images/us_vs_sugar/cropped_shoe_sugar.jpeg" alt="SuGaR">
+      <!-- <img src="./static/images/us_vs_sugar/cropped_shoe_sugar.jpeg" alt="SuGaR"> -->
       <img src="./static/images/us_vs_sugar/cropped_shoe_ours.jpeg" alt="Ours">
     </div>
   </div>
   <div class="level-item">
     <div class="b-dics" style="width: 300px; height:300px;">
       <img src="./static/images/us_vs_sugar/cropped_videogame_image.jpeg" alt="Reference">
-      <img src="./static/images/us_vs_sugar/cropped_videogame_sugar.jpeg" alt="SuGaR">
+      <!-- <img src="./static/images/us_vs_sugar/cropped_videogame_sugar.jpeg" alt="SuGaR"> -->
       <img src="./static/images/us_vs_sugar/cropped_videogame_ours.jpeg" alt="Ours">
     </div>
   </div>
 </div>
 
 
-<p class="title is-3 mt-5 has-text-centered"> Semi-Automatic Masking using SAM and Depth Projections</p>
+<!-- <p class="title is-3 mt-5 has-text-centered"> Semi-Automatic Masking using SAM and Depth Projections</p> -->
 <div class="level">
   <div class="level-item">
     <div class="b-dics" style="width: 300px; height:300px;">
       <img src="./static/images/masked/cropped_apples_image.jpeg" alt="Reference">
       <img src="./static/images/masked/cropped_apples_ours.jpeg" alt="Ours">
-      <img src="./static/images/masked/cropped_apples_ours_masked.jpeg" alt="Ours Masked">
+      <!-- <img src="./static/images/masked/cropped_apples_ours_masked.jpeg" alt="Ours Masked"> -->
     </div>
   </div>
   <div class="level-item">
     <div class="b-dics" style="width: 300px; height:300px;">
       <img src="./static/images/masked/cropped_coffee_image.jpeg" alt="Reference">
       <img src="./static/images/masked/cropped_coffee_ours.jpeg" alt="Ours">
-      <img src="./static/images/masked/cropped_coffee_ours_masked.jpeg" alt="Ours Masked">
+      <!-- <img src="./static/images/masked/cropped_coffee_ours_masked.jpeg" alt="Ours Masked"> -->
     </div>
   </div>
   <div class="level-item">
     <div class="b-dics" style="width: 300px; height:300px;">
       <img src="./static/images/masked/cropped_sculpture_image.jpeg" alt="Reference">
       <img src="./static/images/masked/cropped_sculpture_ours.jpeg" alt="Ours">
-      <img src="./static/images/masked/cropped_sculpture_ours_masked.jpeg" alt="Ours Masked">
+      <!-- <img src="./static/images/masked/cropped_sculpture_ours_masked.jpeg" alt="Ours Masked"> -->
     </div>
   </div>
   <div class="level-item">
     <div class="b-dics" style="width: 300px; height:300px;">
       <img src="./static/images/masked/cropped_dancer_image.jpeg" alt="Reference">
       <img src="./static/images/masked/cropped_dancer_ours.jpeg" alt="Ours">
-      <img src="./static/images/masked/cropped_dancer_ours_masked.jpeg" alt="Ours Masked">
+      <!-- <img src="./static/images/masked/cropped_dancer_ours_masked.jpeg" alt="Ours Masked"> -->
     </div>
   </div>
 </div>
+
+<p class="title is-3 mt-5 has-text-centered"> DTU Dataset </p>
+<div class="level">
+  <div class="level-item">
+    <div class="b-dics" style="width: 900px; height:900px;">
+      <!-- <img src="./static/images/mobile_brick/cropped_aston_gt.jpeg" alt="Ground Truth"> -->
+      <img src="./static/images/us_vs_2dgs/dtu97_2dgs.png" alt="2DGS">
+      <img src="./static/images/us_vs_2dgs/dtu97_ours.png" alt="Ours">
+    </div>
+  </div>
+</div>
+<div class="level">
+  <div class="level-item">
+    <div class="b-dics" style="width: 900px; height:900px;">
+      <!-- <img src="./static/images/mobile_brick/cropped_aston_gt.jpeg" alt="Ground Truth"> -->
+      <img src="./static/images/us_vs_2dgs/dtu105_2dgs.png" alt="2DGS">
+      <img src="./static/images/us_vs_2dgs/dtu105_ours.png" alt="Ours">
+    </div>
+  </div>
+</div>
+<div class="level">
+  <div class="level-item">
+    <div class="b-dics" style="width: 900px; height:900px;">
+      <!-- <img src="./static/images/mobile_brick/cropped_aston_gt.jpeg" alt="Ground Truth"> -->
+      <img src="./static/images/us_vs_2dgs/dtu110_2dgs.png" alt="2DGS">
+      <img src="./static/images/us_vs_2dgs/dtu110_ours.png" alt="Ours">
+    </div>
+  </div>
+</div>
+
+<div class="caption-container" style="max-width: 800px; margin: 0 auto;">
+  Quantitative results on the DTU Dataset. Chamfer distance - lower is better. Red-1<sup>st</sup>, Orange-2<sup>nd</sup>, Yellow-3<sup>rd</sup>. Table adapted from Gaussian Opacity Fields.
+  Our method surpasses other Splatting-based methods, and is comparable with state-of-the-art neural methods such as Neuralangelo while taking significantly less time to run.
+</div>
+
+<iframe id="table-iframe" src="table.html?v=1" width="100%" style="border:none; display:block; height: 350px; overflow-y: hidden;"></iframe>
 
 <p class="title is-3 mt-5 has-text-centered"> MobileBrick Dataset - Comparison with MVSFormer </p>
 <div class="level">
@@ -288,8 +324,13 @@
   </div>
 </div>
 
-<p class="title is-3 mt-5 has-text-centered"> Interactive 3D Meshes (simplified/compressed to reduce size):</p>
-<p class="title is-4 mt-5 has-text-centered"> Tanks and Temples/In the Wild</p>
+<div class="caption-container" style="max-width: 800px; margin: 0 auto;">
+  Quantitative results on the MobileBrick Dataset. F1 - Higher is better, Chamfer distance - lower is better. Red-1<sup>st</sup>, Orange-2<sup>nd</sup>, Yellow-3<sup>rd</sup>.
+</div>
+
+<iframe id="table-iframe" src="table2.html?v=1" width="100%" style="border:none; display:block; height: 250px; overflow-y: hidden;"></iframe>
+
+<!-- <p class="title is-4 mt-5 has-text-centered"> Tanks and Temples/In the Wild</p>
 <div class="level">
   <div class="level-item">
     <figure style="width: 100%; text-align: center;">
@@ -343,15 +384,7 @@
       <figcaption><strong>DTU: Scan 106</strong></figcaption>
     </figure>
   </div>
-</div>
-
-<p class="title is-3 mt-5 has-text-centered"> DTU Results</p>
-<div class="caption-container">
-  Quantitative results on the DTU Dataset. Chamfer distance - lower is better. Red-1<sup>st</sup>, Orange-2<sup>nd</sup>, Yellow-3<sup>rd</sup>. Table adapted from Gaussian Opacity Fields.
-  Our method surpasses other Splatting-based methods, and is comparable with state-of-the-art neural methods such as Neuralangelo while taking significantly less time to run.
-</div>
-
-<iframe src="table.html?v=1" width="100%" height="500px" style="border:none;"></iframe>
+</div> -->
 
 <!-- <p class="bottom-caption">Our method surpasses other Splatting-based methods, and is comparable with state-of-the-art neural methods such as Neuralangelo while taking significantly less time to run.</p> -->
 

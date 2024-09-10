@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            table-layout: auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .best {
+            background-color: rgba(255, 0, 0, 0.5); /* Dark Green */
+        }
+        .second-best {
+            background-color: rgba(255, 166, 0, 0.5); /* Medium Green */
+        }
+        .third-best {
+            background-color: rgba(255, 255, 0, 0.5); /* Light Green */
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Method</th>
+                <th colspan="2">F1 (%) ↑</th>
+                <th rowspan="2">Mean Chamfer Distance (mm) ↓</th>
+            </tr>
+            <tr>
+                <th>2.5mm</th>
+                <th>5mm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MVSFormer</td>
+                <td class="second-best">64.60</td>
+                <td class="second-best">81.14</td>
+                <td class="second-best">9.11</td>
+            </tr>
+            <tr>
+                <td>Ours</td>
+                <td class="best">68.94</td>
+                <td class="best">88.28</td>
+                <td class="best">4.94</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
