@@ -1,1 +1,0 @@
-# gs2mesh.github.io

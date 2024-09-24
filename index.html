@@ -5,168 +5,163 @@
   <meta name="description" content="GS2Mesh: Surface Reconstruction from Gaussian Splatting via Novel Stereo Views.">
   <meta name="keywords" content="gs2mesh">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>GS2Mesh: Surface Reconstruction from Gaussian Splatting via Novel Stereo Views</title>
-  <style>
-    .title {
-      font-size: 2rem;
-    }
-  </style>
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" >
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-
   <link rel="icon" href="./static/images/us_vs_sugar/cropped_hat_ours.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="./static/css/dics.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>  <!-- Import the component -->
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="./static/css/dics.css">
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
   <script src="./static/js/dics.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', domReady);
-    function domReady() {
-        for (const e of document.querySelectorAll(".b-dics")) {
-            new Dics({
-                container: e,
-                textPosition: "bottom"
-            });
-        }
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      for (const e of document.querySelectorAll(".b-dics")) {
+        new Dics({
+          container: e,
+          textPosition: "bottom"
+        });
+      }
+    });
   </script>
   <style>
-    .caption-container {
-      text-align: center;
-      margin: 10px 0;
-      font-size: 1.2em;
-      font-weight: bold;
+    .image-video-pair {
+      display: flex;
+      align-items: center; /* Vertically centers the image relative to the video */
+      justify-content: center; /* Centers items horizontally */
     }
-    @media (max-width: 600px) {
-      .caption-container {
-        font-size: 1em;
-      }
+
+    .image-video-pair img,
+    .image-video-pair video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .image-video-pair img {
+      width: 35%; /* Adjust as needed */
+      margin-right: 0.5rem;
+    }
+
+    .image-video-pair video {
+      width: 65%; /* Adjust as needed */
     }
   </style>
 </head>
 <body>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
+<!-- Headers -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title">GS2Mesh: Surface Reconstruction from Gaussian Splatting via Novel Stereo Views</h1>
+          <h2 style="font-size:1.7rem">ECCV 2024</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Yaniv Wolf</a><sup>*</sup>,</span>
+            <span class="author-block">
+              Amit Bracha</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://ron.cs.technion.ac.il/">Ron Kimmel
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <a href="https://cs.technion.ac.il/" class="author-block">Technion - Israel Institute of Technology, Haifa, Israel</a>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup> Indicates equal contribution</span>
+          </div>
+
           <div class="column has-text-centered">
-            <h1 class="title is-3 publication-title">GS2Mesh: Surface Reconstruction from Gaussian Splatting via Novel Stereo Views</h1>
-            <h2 style="font-size:1.7rem">ECCV 2024</h2>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                Yaniv Wolf</a><sup>*</sup>,</span>
-              <span class="author-block">
-                Amit Bracha</a><sup>*</sup>,</span>
-              <span class="author-block">
-                <a href="https://ron.cs.technion.ac.il/">Ron Kimmel
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2404.01810.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.01810"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/yanivw12/gs2mesh/tree/main"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
               </span>
             </div>
-  
-            <div class="is-size-5 publication-authors">
-              <a href="https://cs.technion.ac.il/" class="author-block">Technion - Israel Institute of Technology, Haifa, Israel</a>
-            </div>
-            <div class="is-size-6 publication-authors">
-              <span class="author-block"><sup>*</sup> Indicates equal contribution</span>
-            </div>
-  
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- PDF Link. -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2404.01810.pdf"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2404.01810"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/yanivw12/gs2mesh/tree/main"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                    </a>
-                </span>
-                <!-- Colab Link. -->
-                <span class="link-block">
-                  <a href="https://gs2mesh.github.io"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="Colab Logo" style="height: 1em; vertical-align: middle;">
-                    </span>
-                    <span>Colab Demo (coming soon)</span>
-                  </a>
-                </span>
-              </div>
-  
-            </div>
+
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-<section class="hero teaser">
-  <div class="video-container" style="display: flex; justify-content: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/cjtmLDD8YZk?si=011_tHybkY491cpq" 
-    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-    gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
   </div>
-  <br>
-  <div class="container is-max-desktop">
-    <h2 class="hero-body">
-      <p>
-        <b>TL;DR:</b> We present a fast and accurate method to reconstruct smooth, geometrically-consistent surfaces from Gaussian Splatting models.
-        Our method requires less than 5 minutes of additional computation time on top of the 3DGS scence capture, for a typical in-the-wild scene.
-      </p>
-    </h2>
-  </div>
-
-
 </section>
+<!-- End headers -->
 
-<section class="pipeline"></section>
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="./static/images/pipeline.jpeg" alt="Pipeline Image">
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe src="https://www.youtube.com/embed/cjtmLDD8YZk?si=011_tHybkY491cpq" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-
-<section class="section">
+<!-- End youtube video -->
+ 
+<!-- Pipeline-->
+<section class="hero teaser">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <b>TL;DR:</b> We present a fast and accurate method to reconstruct smooth, geometrically-consistent surfaces from Gaussian Splatting models,
+        by utilizing the superior novel view synthesis capabilities of GS and the accuracy of stereo correspondence models for depth estimation.
+        Our method requires only a small overhead on top of the GS process, it is modular and shows state-of-the-art performance.</h2>
+      <img src="./static/images/pipeline.jpeg" alt="Pipeline Image">
+      </div>
+  </div>
+</section>
+<!-- End pipeline -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -186,236 +181,202 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
   </div>
 </section>
+<!-- End paper abstract -->
 
+<!-- In-the-wild results -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Results on Uncontrolled In-The-Wild Smartphone Videos</h2>
 
-<p class="title is-3 mt-5 has-text-centered"> In-the-Wild Scenes from Uncontrolled Smartphone Videos</p>
-<div class="level">
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/us_vs_sugar/cropped_amit_image.jpeg" alt="Reference">
-      <!-- <img src="./static/images/us_vs_sugar/cropped_amit_sugar.jpeg" alt="SuGaR"> -->
-      <img src="./static/images/us_vs_sugar/cropped_amit_ours.jpeg" alt="Ours">
+    <div class="columns is-multiline is-centered">
+      <!-- Pair 1 -->
+      <div class="column is-one-third">
+        <div class="image-video-pair">
+          <img src="./static/3d/hat.png" alt="Result Image 1">
+          <video autoplay loop muted playsinline>
+            <source src="./static/3d/hat2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Pair 2 -->
+      <div class="column is-one-third">
+        <div class="image-video-pair">
+          <img src="./static/3d/amit.png" alt="Result Image 2">
+          <video autoplay loop muted playsinline>
+            <source src="./static/3d/amit2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Pair 3 -->
+      <div class="column is-one-third">
+        <div class="image-video-pair">
+          <img src="./static/3d/elephant.png" alt="Result Image 3">
+          <video autoplay loop muted playsinline>
+            <source src="./static/3d/elephant2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Pair 4 -->
+      <div class="column is-one-third">
+        <div class="image-video-pair">
+          <img src="./static/3d/sculpture.png" alt="Result Image 4">
+          <video autoplay loop muted playsinline>
+            <source src="./static/3d/sculpture2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Pair 5 -->
+      <div class="column is-one-third">
+        <div class="image-video-pair">
+          <img src="./static/3d/apples.png" alt="Result Image 5">
+          <video autoplay loop muted playsinline>
+            <source src="./static/3d/apples2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Pair 6 -->
+      <div class="column is-one-third">
+        <div class="image-video-pair">
+          <img src="./static/3d/flowers.png" alt="Result Image 6">
+          <video autoplay loop muted playsinline>
+            <source src="./static/3d/flowers2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Pair 7 -->
+      <div class="column is-one-third">
+        <div class="image-video-pair">
+          <img src="./static/3d/coffee.png" alt="Result Image 7">
+          <video autoplay loop muted playsinline>
+            <source src="./static/3d/coffee2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Pair 8 -->
+      <div class="column is-one-third">
+        <div class="image-video-pair">
+          <img src="./static/3d/cactus.png" alt="Result Image 8">
+          <video autoplay loop muted playsinline>
+            <source src="./static/3d/cactus2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Pair 9 -->
+      <div class="column is-one-third">
+        <div class="image-video-pair">
+          <img src="./static/3d/dancer.png" alt="Result Image 9">
+          <video autoplay loop muted playsinline>
+            <source src="./static/3d/dancer2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/us_vs_sugar/cropped_hat_image.jpeg" alt="Reference">
-      <!-- <img src="./static/images/us_vs_sugar/cropped_hat_sugar.jpeg" alt="SuGaR"> -->
-      <img src="./static/images/us_vs_sugar/cropped_hat_ours.jpeg" alt="Ours">
+</section>
+<!-- End in-the-wild results -->
+
+<!-- DTU Dataset Section -->
+<section class="section hero is-light">
+  <p class="title is-3 mt-5 has-text-centered">DTU Dataset</p>
+  <div class="level">
+    <div class="level-item">
+      <div class="b-dics" style="width: 400px; height:400px;">
+        <img src="./static/images/us_vs_2dgs/dtu97_2dgs.png" alt="2DGS">
+        <img src="./static/images/us_vs_2dgs/dtu97_ours.png" alt="Ours">
+      </div>
+    </div>
+    <div class="level-item">
+      <div class="b-dics" style="width: 400px; height:400px;">
+        <img src="./static/images/us_vs_2dgs/dtu110_2dgs.png" alt="2DGS">
+        <img src="./static/images/us_vs_2dgs/dtu110_ours.png" alt="Ours">
+      </div>
     </div>
   </div>
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/us_vs_sugar/cropped_shoe_image.jpeg" alt="Reference">
-      <!-- <img src="./static/images/us_vs_sugar/cropped_shoe_sugar.jpeg" alt="SuGaR"> -->
-      <img src="./static/images/us_vs_sugar/cropped_shoe_ours.jpeg" alt="Ours">
+
+  <div class="caption-container" style="max-width: 800px; margin: 0 auto;">
+    Quantitative results on the DTU Dataset. Chamfer distance - lower is better. Red-1<sup>st</sup>, Orange-2<sup>nd</sup>, Yellow-3<sup>rd</sup>. Table adapted from Gaussian Opacity Fields.
+    Our method surpasses other Splatting-based methods, and is comparable with state-of-the-art neural methods such as Neuralangelo while taking significantly less time to run.
+  </div>
+
+  <iframe id="table-iframe" src="table.html?v=1" width="100%" style="border:none; display:block; height: 320px; overflow-y: hidden;"></iframe>
+</section>
+<!-- End DTU Dataset Section -->
+
+<!-- MobileBrick Dataset Section -->
+<section class="section">
+  <p class="title is-3 mt-5 has-text-centered">MobileBrick Dataset - Comparison with MVSFormer</p>
+  <div class="level">
+      <div class="level-item">
+        <div class="b-dics" style="width: 300px; height:300px;">
+          <img src="./static/images/mobile_brick/cropped_aston_gt.jpeg" alt="Ground Truth">
+          <img src="./static/images/mobile_brick/cropped_aston_mvs.jpeg" alt="MVSFormer">
+          <img src="./static/images/mobile_brick/cropped_aston_ours.jpeg" alt="Ours">
+        </div>
+      </div>
+      <div class="level-item">
+        <div class="b-dics" style="width: 300px; height:300px;">
+          <img src="./static/images/mobile_brick/cropped_big_ben_gt.jpeg" alt="Ground Truth">
+          <img src="./static/images/mobile_brick/cropped_big_ben_mvs.jpeg" alt="MVSFormer">
+          <img src="./static/images/mobile_brick/cropped_big_ben_ours.jpeg" alt="Ours">
+        </div>
+      </div>
+      <div class="level-item">
+        <div class="b-dics" style="width: 300px; height:300px;">
+          <img src="./static/images/mobile_brick/cropped_castle_gt.jpeg" alt="Ground Truth">
+          <img src="./static/images/mobile_brick/cropped_castle_mvs.jpeg" alt="MVSFormer">
+          <img src="./static/images/mobile_brick/cropped_castle_ours.jpeg" alt="Ours">
+        </div>
+      </div>
+      <div class="level-item">
+        <div class="b-dics" style="width: 300px; height:300px;">
+          <img src="./static/images/mobile_brick/cropped_colosseum_gt.jpeg" alt="Ground Truth">
+          <img src="./static/images/mobile_brick/cropped_colosseum_mvs.jpeg" alt="MVSFormer">
+          <img src="./static/images/mobile_brick/cropped_colosseum_ours.jpeg" alt="Ours">
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/us_vs_sugar/cropped_videogame_image.jpeg" alt="Reference">
-      <!-- <img src="./static/images/us_vs_sugar/cropped_videogame_sugar.jpeg" alt="SuGaR"> -->
-      <img src="./static/images/us_vs_sugar/cropped_videogame_ours.jpeg" alt="Ours">
-    </div>
-  </div>
-</div>
 
+  <div class="caption-container" style="max-width: 800px; margin: 0 auto;">
+    Quantitative results on the MobileBrick Dataset. F1 - Higher is better, Chamfer distance - lower is better. Red-1<sup>st</sup>, Orange-2<sup>nd</sup>, Yellow-3<sup>rd</sup>.
+  </div>
+</section>
+<!-- End MobileBrick Dataset Section -->
 
-<!-- <p class="title is-3 mt-5 has-text-centered"> Semi-Automatic Masking using SAM and Depth Projections</p> -->
-<div class="level">
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/masked/cropped_apples_image.jpeg" alt="Reference">
-      <img src="./static/images/masked/cropped_apples_ours.jpeg" alt="Ours">
-      <!-- <img src="./static/images/masked/cropped_apples_ours_masked.jpeg" alt="Ours Masked"> -->
-    </div>
-  </div>
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/masked/cropped_coffee_image.jpeg" alt="Reference">
-      <img src="./static/images/masked/cropped_coffee_ours.jpeg" alt="Ours">
-      <!-- <img src="./static/images/masked/cropped_coffee_ours_masked.jpeg" alt="Ours Masked"> -->
-    </div>
-  </div>
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/masked/cropped_sculpture_image.jpeg" alt="Reference">
-      <img src="./static/images/masked/cropped_sculpture_ours.jpeg" alt="Ours">
-      <!-- <img src="./static/images/masked/cropped_sculpture_ours_masked.jpeg" alt="Ours Masked"> -->
-    </div>
-  </div>
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/masked/cropped_dancer_image.jpeg" alt="Reference">
-      <img src="./static/images/masked/cropped_dancer_ours.jpeg" alt="Ours">
-      <!-- <img src="./static/images/masked/cropped_dancer_ours_masked.jpeg" alt="Ours Masked"> -->
-    </div>
-  </div>
-</div>
+  <iframe id="table-iframe" src="table2.html?v=1" width="100%" style="border:none; display:block; height: 200px; overflow-y: hidden;"></iframe>
+</section>
 
-<p class="title is-3 mt-5 has-text-centered"> DTU Dataset </p>
-<div class="level">
-  <div class="level-item">
-    <div class="b-dics" style="width: 400px; height:400px;">
-      <img src="./static/images/us_vs_2dgs/dtu97_2dgs.png" alt="2DGS">
-      <img src="./static/images/us_vs_2dgs/dtu97_ours.png" alt="Ours">
-    </div>
-  </div>
-<!-- </div> -->
-<!-- <div class="level">
-  <div class="level-item">
-    <div class="b-dics" style="width: 900px; height:1200px;">
-      <img src="./static/images/us_vs_2dgs/dtu105_2dgs.png" alt="2DGS">
-      <img src="./static/images/us_vs_2dgs/dtu105_ours.png" alt="Ours">
-    </div>
-  </div>
-</div> -->
-<!-- <div class="level"> -->
-  <div class="level-item">
-    <div class="b-dics" style="width: 400px; height:400px;">
-      <img src="./static/images/us_vs_2dgs/dtu110_2dgs.png" alt="2DGS">
-      <img src="./static/images/us_vs_2dgs/dtu110_ours.png" alt="Ours">
-    </div>
-  </div>
-</div>
-
-<div class="caption-container" style="max-width: 800px; margin: 0 auto;">
-  Quantitative results on the DTU Dataset. Chamfer distance - lower is better. Red-1<sup>st</sup>, Orange-2<sup>nd</sup>, Yellow-3<sup>rd</sup>. Table adapted from Gaussian Opacity Fields.
-  Our method surpasses other Splatting-based methods, and is comparable with state-of-the-art neural methods such as Neuralangelo while taking significantly less time to run.
-</div>
-
-<iframe id="table-iframe" src="table.html?v=1" width="100%" style="border:none; display:block; height: 400px; overflow-y: hidden;"></iframe>
-
-<p class="title is-3 mt-5 has-text-centered"> MobileBrick Dataset - Comparison with MVSFormer </p>
-<div class="level">
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/mobile_brick/cropped_aston_gt.jpeg" alt="Ground Truth">
-      <img src="./static/images/mobile_brick/cropped_aston_mvs.jpeg" alt="MVSFormer">
-      <img src="./static/images/mobile_brick/cropped_aston_ours.jpeg" alt="Ours">
-    </div>
-  </div>
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/mobile_brick/cropped_big_ben_gt.jpeg" alt="Ground Truth">
-      <img src="./static/images/mobile_brick/cropped_big_ben_mvs.jpeg" alt="MVSFormer">
-      <img src="./static/images/mobile_brick/cropped_big_ben_ours.jpeg" alt="Ours">
-    </div>
-  </div>
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/mobile_brick/cropped_castle_gt.jpeg" alt="Ground Truth">
-      <img src="./static/images/mobile_brick/cropped_castle_mvs.jpeg" alt="MVSFormer">
-      <img src="./static/images/mobile_brick/cropped_castle_ours.jpeg" alt="Ours">
-    </div>
-  </div>
-  <div class="level-item">
-    <div class="b-dics" style="width: 300px; height:300px;">
-      <img src="./static/images/mobile_brick/cropped_colosseum_gt.jpeg" alt="Ground Truth">
-      <img src="./static/images/mobile_brick/cropped_colosseum_mvs.jpeg" alt="MVSFormer">
-      <img src="./static/images/mobile_brick/cropped_colosseum_ours.jpeg" alt="Ours">
-    </div>
-  </div>
-</div>
-
-<div class="caption-container" style="max-width: 800px; margin: 0 auto;">
-  Quantitative results on the MobileBrick Dataset. F1 - Higher is better, Chamfer distance - lower is better. Red-1<sup>st</sup>, Orange-2<sup>nd</sup>, Yellow-3<sup>rd</sup>.
-</div>
-
-<iframe id="table-iframe" src="table2.html?v=1" width="100%" style="border:none; display:block; height: 250px; overflow-y: hidden;"></iframe>
-
-<!-- <p class="title is-4 mt-5 has-text-centered"> Tanks and Temples/In the Wild</p>
-<div class="level">
-  <div class="level-item">
-    <figure style="width: 100%; text-align: center;">
-      <model-viewer alt="dancer" src="./static/meshes/truck_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
-      <figcaption><strong>Tanks and Temples: Truck</strong></figcaption>
-    </figure>
-  </div>
-  <div class="level-item">
-    <figure style="width: 100%; text-align: center;">
-      <model-viewer alt="flowers" src="./static/meshes/elephant_ours_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
-      <figcaption><strong>In the Wild: Elephant</strong></figcaption>
-    </figure>
-  </div>
-  <div class="level-item">
-    <figure style="width: 100%; text-align: center;">
-      <model-viewer alt="elephant" src="./static/meshes/orchid_ours_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
-      <figcaption><strong>In the Wild: Orchid</strong></figcaption>
-    </figure>
-  </div>
-  <div class="level-item">
-    <figure style="width: 100%; text-align: center;">
-      <model-viewer alt="dancer" src="./static/meshes/cactus_simplified_025_compressed.glb" shadow-intensity="1" exposure="1.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 0" touch-action="pan-y"></model-viewer>
-      <figcaption><strong>In the Wild: Cactus</strong></figcaption>
-    </figure>
-  </div>
-</div>
-
-<p class="title is-4 mt-5 has-text-centered"> DTU</p>
-<div class="level">
-  <div class="level-item">
-    <figure style="width: 100%; text-align: center;">
-      <model-viewer alt="dancer" src="./static/meshes/DTU/dtu_24_compressed.glb" shadow-intensity="1" exposure="2.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
-      <figcaption><strong>DTU: Scan 24</strong></figcaption>
-    </figure>
-  </div>
-  <div class="level-item">
-    <figure style="width: 100%; text-align: center;">
-      <model-viewer alt="flowers" src="./static/meshes/DTU/dtu_37_compressed.glb" shadow-intensity="1" exposure="2.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
-      <figcaption><strong>DTU: Scan 37</strong></figcaption>
-    </figure>
-  </div>
-  <div class="level-item">
-    <figure style="width: 100%; text-align: center;">
-      <model-viewer alt="elephant" src="./static/meshes/DTU/dtu_105_compressed.glb" shadow-intensity="1" exposure="2.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
-      <figcaption><strong>DTU: Scan 105</strong></figcaption>
-    </figure>
-  </div>
-  <div class="level-item">
-    <figure style="width: 100%; text-align: center;">
-      <model-viewer alt="dancer" src="./static/meshes/DTU/dtu_106_compressed.glb" shadow-intensity="1" exposure="2.0" style="width: 100%; height: 300px;" camera-controls auto-rotate orientation="0 180 -90" touch-action="pan-y"></model-viewer>
-      <figcaption><strong>DTU: Scan 106</strong></figcaption>
-    </figure>
-  </div>
-</div> -->
-
-<!-- <p class="bottom-caption">Our method surpasses other Splatting-based methods, and is comparable with state-of-the-art neural methods such as Neuralangelo while taking significantly less time to run.</p> -->
-
-<!-- <iframe src="table.html?v=1" width="100%" height="500px" style="border:none;"></iframe> -->
-
-
-<section class="section" id="BibTeX</section>">
+<!--BibTex citation -->
+<section class="section hero is-light" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3 has-text-centered">BibTeX</h2>
     <pre><code>@article{wolf2024gs2mesh,
       title={GS2Mesh: Surface Reconstruction from Gaussian Splatting via Novel Stereo Views},
       author={Wolf, Yaniv and Bracha, Amit and Kimmel, Ron},
       journal={arXiv preprint arXiv:2404.01810},
-      year={2024}
-    }</code></pre>
-  
+      year={2024}</code></pre>
   </div>
 </section>
+<!--End BibTex citation -->
 
+<!-- References -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">References</h2>
-
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">References</h2>
         <div class="content has-text-justified">
           <p>
-            Barron, Jonathan T., et al. "Mip-nerf 360: Unbounded anti-aliased neural radiance fields." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2022.
-          </p>
-          <p>
             Cao, Chenjie, Xinlin Ren, and Yanwei Fu. "MVSFormer: Multi-View stereo by learning robust image features and temperature-based depth." arXiv preprint arXiv:2208.02541 (2022).
-          </p>
-          <p>
-            Guédon, Antoine, and Vincent Lepetit. "SuGaR: Surface-aligned Gaussian splatting for efficient 3D mesh reconstruction and high-quality mesh rendering." arXiv preprint arXiv:2311.12775 (2023).
           </p>
           <p>
             Huang, Binbin, et al. "2D Gaussian Splatting for Geometrically Accurate Radiance Fields." SIGGRAPH 2024 Conference Papers, Association for Computing Machinery, 2024, doi:10.1145/3641519.3657428.
@@ -427,55 +388,52 @@
             Kerbl, Bernhard, et al. "3D Gaussian splatting for real-time radiance field rendering." ACM Transactions on Graphics 42.4 (2023): 1-14.
           </p>
           <p>
-            Kirillov, Alexander, et al. "Segment Anything." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023.
-          </p>
-          <p>
             Knapitsch, Arno, et al. "Tanks and Temples: Benchmarking large-scale scene reconstruction." ACM Transactions on Graphics (ToG) 36.4 (2017): 1-13.
           </p>
           <p>
             Li, Kejie, et al. "MobileBrick: Building LEGO for 3D reconstruction on mobile devices." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.
           </p>
-          <p>
-            Li, Zhaoshuo, et al. "Neuralangelo: High-fidelity neural surface reconstruction." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.
-          </p>
-          <p>
-            Mildenhall, Ben, et al. "Nerf: Representing scenes as neural radiance fields for view synthesis." Communications of the ACM 65.1 (2021): 99-106.
-          </p>
-          <p>
-            Wang, Peng, et al. "Neus: Learning neural implicit surfaces by volume rendering for multi-view reconstruction." arXiv preprint arXiv:2106.10689 (2021).
-          </p>
-          <p>
-            Yariv, Lior, et al. "BakedSDF: Meshing neural SDFs for real-time view synthesis." ACM SIGGRAPH 2023 Conference Proceedings. 2023.
-          </p>
-          <p>
-            Yariv, Lior, et al. "Volume rendering of neural implicit surfaces." Advances in Neural Information Processing Systems 34 (2021): 4805-4815.
-          </p>
-          <p>
-            Yu, Zehao, Torsten Sattler, and Andreas Geiger. "Gaussian Opacity Fields: Efficient and Compact Surface Reconstruction in Unbounded Scenes." arXiv preprint arXiv:2404.10772 (2024).
-          </p>
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
   </div>
 </section>
+<!-- End References -->
 
-
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
+
           <p>
-            This website is based on <a href="https://github.com/nerfies/nerfies.github.io">this</a> source code, 
-            and <a href="https://github.com/abelcabezaroman/definitive-image-comparison-slider">this</a> code for the comparison slider.
-            <!-- and <a href="https://github.com/google/model-viewer?tab=readme-ov-file">this</a> code for the 3D model viewer. 
-            3D models were compressed using <a href="https://gltf.report/">this</a>. -->
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br>  The comparison slider uses <a href="https://github.com/abelcabezaroman/definitive-image-comparison-slider">this</a> code.
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
+
         </div>
       </div>
     </div>
   </div>
 </footer>
+<!-- End footer-->
+
+<!-- Default Statcounter code for GS2Mesh https://gs2mesh.github.io/ -->
+<script type="text/javascript">
+  var sc_project=13040244; 
+  var sc_invisible=1; 
+  var sc_security="f5b57965"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img class="statcounter"
+  src="https://c.statcounter.com/13040244/0/f5b57965/1/" alt="Web Analytics"
+  referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+  <!-- End of Statcounter Code -->
+
 </body>
 </html>
